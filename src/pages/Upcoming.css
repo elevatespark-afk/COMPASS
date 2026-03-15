@@ -1,0 +1,155 @@
+.upcoming-page { background: var(--navy-deep); }
+.upcoming-hero { background: var(--navy); }
+.page-hero-title-white { color: var(--white) !important; }
+
+.upcoming-section {
+  background: var(--navy);
+  padding: 5rem 8%;
+}
+
+.upcoming-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* TIMELINE */
+.timeline { display: flex; flex-direction: column; gap: 0; }
+
+.timeline-item {
+  position: relative;
+  padding-left: 3rem;
+  padding-bottom: 3rem;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  left: 0; top: 4px;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(200,155,60,0.25);
+  z-index: 1;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 7px; top: 20px;
+  width: 2px;
+  height: calc(100% - 16px);
+  background: rgba(200,155,60,0.25);
+}
+.timeline-item:last-child::before { display: none; }
+
+.timeline-content {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(200,155,60,0.15);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  transition: all 0.25s;
+}
+.timeline-content:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(200,155,60,0.4);
+}
+
+.timeline-date {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem;
+}
+.timeline-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem; font-weight: 700;
+  color: var(--white); margin-bottom: 0.35rem;
+}
+.timeline-detail {
+  font-size: 0.88rem; color: rgba(255,255,255,0.55); margin-bottom: 1rem;
+}
+
+.timeline-badge {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+  padding: 4px 12px; border-radius: 20px;
+}
+.badge-next    { background: var(--gold); color: var(--navy-deep); }
+.badge-planned { background: rgba(200,155,60,0.15); color: var(--gold); border: 1px solid rgba(200,155,60,0.4); }
+.badge-future  { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); }
+
+/* VISUAL */
+.upcoming-visual {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 1.5rem; text-align: center; position: sticky; top: 100px;
+}
+
+.compass-spin-large {
+  font-size: 9rem;
+  display: block;
+  animation: rotate-slow 25s linear infinite;
+  filter: drop-shadow(0 0 30px rgba(200,155,60,0.4));
+}
+
+.compass-caption {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.45);
+}
+
+.upcoming-cta-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(200,155,60,0.25);
+  border-radius: 14px;
+  padding: 2rem;
+  width: 100%;
+  text-align: left;
+}
+.upcoming-cta-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; font-weight: 700;
+  color: var(--white); margin-bottom: 0.5rem;
+}
+.upcoming-cta-card p {
+  font-size: 0.88rem; line-height: 1.65;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ROADMAP */
+.upcoming-roadmap-section {
+  background: var(--navy-deep);
+  padding: 6rem 8%;
+}
+
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.roadmap-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(200,155,60,0.15);
+  border-radius: 14px;
+  padding: 2rem;
+  transition: all 0.25s;
+}
+.roadmap-card:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(200,155,60,0.4);
+  transform: translateY(-3px);
+}
+
+.roadmap-icon { font-size: 2rem; margin-bottom: 1rem; }
+.roadmap-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; font-weight: 700;
+  color: var(--white); margin-bottom: 0.6rem;
+}
+.roadmap-body { font-size: 0.88rem; line-height: 1.65; color: rgba(255,255,255,0.55); }
+
+@media (max-width: 900px) {
+  .upcoming-layout { grid-template-columns: 1fr; }
+  .upcoming-visual { position: static; }
+  .roadmap-grid { grid-template-columns: 1fr; }
+}
