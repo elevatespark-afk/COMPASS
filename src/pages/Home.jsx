@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import Typewriter from 'typewriter-effect';
 import { ALL_IMGS, OLOH, SMGH } from '../images';
 import useFadeUp from '../hooks/useFadeUp';
 import './Home.css';
@@ -42,7 +43,22 @@ export default function Home() {
           <div className="hero-content fade-up">
             <div className="hero-tag">Tucker FBLA &nbsp;·&nbsp; 2025–2026</div>
             <h1>PROJECT<br /><span className="gold">COMPASS</span></h1>
-            <p className="hero-sub">Bridging Generations Through Service</p>
+            <p className="hero-sub">
+              <Typewriter
+                options={{
+                  strings: [
+                    'Bridging Generations Through Service',
+                    'Bringing Music, Games & Connection',
+                    'Fighting Senior Isolation in Henrico County',
+                    'Tucker FBLA — Community First',
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 50,
+                  deleteSpeed: 30,
+                }}
+              />
+            </p>
             <p className="hero-desc">Tucker FBLA students visit senior residential facilities across Henrico County — bringing music, games, home-cooked meals, and genuine human connection to those who need it most.</p>
             <div className="hero-cta">
               <Link to="/get-involved" className="btn-primary">Get Involved</Link>
